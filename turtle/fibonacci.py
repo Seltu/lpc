@@ -25,9 +25,9 @@ def plot_fibo(n):
     t.rt(90)
     t.pendown()
     t.fd(b * factor / 2)
-    o = side_b
+    aux = side_b
     side_b = side_b + side_a
-    side_a = o
+    side_a = aux
     for i in range(1, n):
         color = i
         while color > len(colors)-1:
@@ -50,9 +50,9 @@ def plot_fibo(n):
         t.rt(90)
         t.pendown()
         t.fd(side_b * factor / 2)
-        o = side_b
+        aux = side_b
         side_b = side_b + side_a
-        side_a = o
+        side_a = aux
 
     t.penup()
     t.setposition(factor, 0)
@@ -67,9 +67,9 @@ def plot_fibo(n):
         for j in range(90):
             t.fd(fdwd)
             t.lt(1)
-        o = a
+        aux = a
         a = b
-        b = o + b
+        b = aux + b
 
 
 colors = ["black", "green", "blue", "magenta"]
