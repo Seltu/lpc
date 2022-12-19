@@ -158,7 +158,7 @@ def move_ball():
             screen.ontimer(move_ball, 10)
         else:
             hud.clear()
-            hud.write("WINNER | Score : {}".format(lives, score), align="center",
+            hud.write("WINNER | Score : {}".format(score), align="center",
                       font=("Press Start 2P", 18, "normal"))
             ball.color('black')
             screen.update()
@@ -167,7 +167,7 @@ def move_ball():
         screen.ontimer(move_ball, 1000)
     else:
         hud.clear()
-        hud.write("GAME OVER | Score : {}".format(lives, score), align="center",
+        hud.write("GAME OVER | Score : {}".format(score), align="center",
                   font=("Press Start 2P", 18, "normal"))
         ball.color('black')
         screen.update()
