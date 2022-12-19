@@ -129,13 +129,15 @@ def move_ball():
     if ball.xcor() < -380:
         ball.setx(-380)
         ball.dx *= -1
-        last_pos = (ball.xcor(), ball.ycor())
+        if ball.ycor() > 100:
+            last_pos = (ball.xcor(), ball.ycor())
 
     # collision with right wall
     if ball.xcor() > 380:
         ball.setx(380)
         ball.dx *= -1
-        last_pos = (ball.xcor(), ball.ycor())
+        if ball.ycor() > 100:
+            last_pos = (ball.xcor(), ball.ycor())
 
     # collision with paddle
     collision((paddle.xcor(), paddle.ycor()))
@@ -156,7 +158,7 @@ def move_ball():
             screen.ontimer(move_ball, 10)
         else:
             hud.clear()
-            hud.write("GAME OVER | Score : {}".format(lives, score), align="center",
+            hud.write("WINNER | Score : {}".format(lives, score), align="center",
                       font=("Press Start 2P", 18, "normal"))
             ball.color('black')
             screen.update()
